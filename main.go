@@ -11,6 +11,10 @@ var (
 
 func main() {
 	Println("behavior tree main function.")
+	input1()
+}
+
+func input1() {
 	Println("please input something: ")
 
 	Scanln(&i, &j)
