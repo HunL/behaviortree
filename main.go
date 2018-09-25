@@ -6,6 +6,16 @@ import (
 	"os"
 )
 
+type Item struct {
+	isFor bool
+	forArgs []int
+	args map[string]int
+}
+
+type board struct {
+	items map[int]Item
+}
+
 var (
 	i int
 	j string
