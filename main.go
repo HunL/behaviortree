@@ -7,9 +7,9 @@ import (
 )
 
 type Item struct {
-	isFor bool
+	isFor   bool
 	forArgs []int
-	args map[string]int
+	args    map[string]int
 }
 
 type board struct {
@@ -35,7 +35,7 @@ func input1() {
 
 func input2() {
 	inputReader := bufio.NewReader(os.Stdin)
-	Println("Please input your name:")
+	Println("Please input pic. '1' for sequence, '2' for select, '3' for circulation.")
 	input, err := inputReader.ReadString('\n')
 
 	if err != nil {
@@ -43,12 +43,19 @@ func input2() {
 		return
 	}
 
-	Printf("Your name is %s", input)
+	Printf("Your input is %s", input)
 	switch input {
 	// case "jeff\r\n": fallthrough
-	case "jeff\n": fallthrough
-	case "jack\r\n": fallthrough
-	case "rose\r\n": Printf("Welcome %s\n", input)
-	default: Printf("You are not welcome here! Goodbye!\n")
+	case "1\r\n":
+		Printf("Welcome %s\n", input)
+	case "2\r\n":
+		Printf("Welcome %s\n", input)
+	case "3\r\n":
+		Printf("Welcome %s\n", input)
+	// case "jeff\n": fallthrough
+	// case "jack\r\n": fallthrough
+	// case "rose\r\n": Printf("Welcome %s\n", input)
+	default:
+		Printf("Invalid input! Goodbye!\n")
 	}
 }
