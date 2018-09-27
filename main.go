@@ -6,6 +6,23 @@ import (
 	"os"
 )
 
+type SeqItem struct {
+	i int
+}
+
+type SelItem struct {
+	i int
+}
+
+type CirItem struct {
+	n      int
+	action actionStruct
+}
+
+type actionStruct struct {
+	target int
+}
+
 type Item struct {
 	isFor   bool
 	forArgs []int
@@ -23,17 +40,10 @@ var (
 
 func main() {
 	Println("behavior tree main function.")
-	input2()
+	input()
 }
 
-func input1() {
-	Println("please input something: ")
-
-	Scanln(&i, &j)
-	Println("what you input is:", i, ", and ", j)
-}
-
-func input2() {
+func input() {
 	inputReader := bufio.NewReader(os.Stdin)
 	Println("Please input pic. '1' for sequence, '2' for select, '3' for circulation.")
 	input, err := inputReader.ReadString('\n')
@@ -45,17 +55,33 @@ func input2() {
 
 	Printf("Your input is %s", input)
 	switch input {
-	// case "jeff\r\n": fallthrough
 	case "1\r\n":
 		Printf("Welcome %s\n", input)
+		makeSeqItem()
 	case "2\r\n":
 		Printf("Welcome %s\n", input)
+		makeSelItem()
 	case "3\r\n":
 		Printf("Welcome %s\n", input)
-	// case "jeff\n": fallthrough
-	// case "jack\r\n": fallthrough
-	// case "rose\r\n": Printf("Welcome %s\n", input)
+		makeCirItem()
 	default:
 		Printf("Invalid input! Goodbye!\n")
 	}
+}
+
+func makeSeqItem() {
+	return
+}
+func makeSelItem() {
+	return
+}
+func makeCirItem() {
+	return
+}
+
+func input1() {
+	Println("please input something: ")
+
+	Scanln(&i, &j)
+	Println("what you input is:", i, ", and ", j)
 }
