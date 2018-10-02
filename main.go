@@ -56,13 +56,19 @@ func input() {
 	Printf("Your input is %s", input)
 	switch input {
 	case "1\r\n":
-		Printf("Welcome %s\n", input)
+		fallthrough
+	case "1\n":
+		Printf("Welcome %s, now to makeSeqItem.\n", input)
 		makeSeqItem()
 	case "2\r\n":
-		Printf("Welcome %s\n", input)
+		fallthrough
+	case "2\n":
+		Printf("Welcome %s, now to makeSelItem.\n", input)
 		makeSelItem()
 	case "3\r\n":
-		Printf("Welcome %s\n", input)
+		fallthrough
+	case "3\n":
+		Printf("Welcome %s, now to makeCirItem.\n", input)
 		makeCirItem()
 	default:
 		Printf("Invalid input! Goodbye!\n")
